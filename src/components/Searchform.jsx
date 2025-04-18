@@ -20,6 +20,8 @@ const Searchform = () => {
       console.error('Error fetching Pokemon data:', error);
     } ;
 
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchPokemon();
