@@ -9,14 +9,16 @@ const Searchform = () => {
   const [sprite, setSprite] = useState({})
 
     const fetchPokemon = async () => {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
+   try{const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
       const pokeData = await response.json();
       console.log(pokeData);
       setPokeInfo(pokeData)
       setSprite(pokeData.sprites)
       console.log(sprite.front_default)
       
-    };
+    }catch (error) {
+      console.error('Error fetching Pokemon data:', error);
+    } ;
 
   const handleSubmit = (e) => {
     e.preventDefault();
