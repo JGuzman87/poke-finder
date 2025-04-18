@@ -56,7 +56,7 @@ const handleChange = (e) => {
         </button>
       </form>
 
-      <Card name={pokeInfo.name} img={sprite.front_default}/>
+<Card name={pokeInfo.name} img={sprite ? sprite.front_default : ''} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ const Card = (props) => {
         <div className="card-body">
           <div className='flex justify-around'>
             <h2 className="card-title capitalize">{props.name}</h2>
-            <img width="100px" src={props.img} alt="pokemon_image" />
+            <img width="100px" src={props.img} />
           </div>
 
           <p>
