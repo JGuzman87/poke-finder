@@ -6,21 +6,25 @@ const Searchform = () => {
 
   const [pokeInfo, setPokeInfo] = useState({})
   const [pokeName, setPokeName] = useState('');
-  const [sprite, setSprite] = useState({})
-
+  const [sprite, setSprite] = useState({});
+  
     const fetchPokemon = async () => {
    try{const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`);
       const pokeData = await response.json();
-      console.log(pokeData);
       setPokeInfo(pokeData)
       setSprite(pokeData.sprites)
-      console.log(sprite.front_default)
+    
+     pokeData.abilities.map((ability, index) =>
+       console.log(index, ability.ability.name)
+     );
       
     }catch (error) {
       console.error('Error fetching Pokemon data:', error);
     } ;
 
   }
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
