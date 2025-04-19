@@ -24,7 +24,9 @@ const Searchform = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     fetchPokemon();
+    setPokeName('')
 
   }
 
@@ -37,9 +39,9 @@ const handleChange = (e) => {
 }
     
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="grid grid-cols-1 gap-4 w-full md:w-1/2 p-4">
       <form
-        className="bg-cyan-400 flex flex-col gap-4 max-w-md items-center p-4 "
+        className="bg-cyan-400 flex flex-col gap-4 items-center p-4"
         htmlFor="api-call"
         onSubmit={handleSubmit}
       >
@@ -50,6 +52,8 @@ const handleChange = (e) => {
           name="poke_name"
           value={pokeName}
           onChange={handleChange}
+          placeholder='enter pokemon name'
+          required
         />
         <button className="btn btn-secondary" type="submit">
           Search
