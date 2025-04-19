@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Card = (props) => {
     return (
-      <div className="card bg-primary text-primary-content ">
+      <div className="card bg-primary shadow-md shadow-gray-500 rounded-xl text-primary-content ">
         <div className="card-body">
           <div className='flex justify-around'>
             <h2 className="card-title capitalize text-white text-3xl">{props.name}</h2>

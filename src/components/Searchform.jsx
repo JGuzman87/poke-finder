@@ -41,7 +41,7 @@ const handleChange = (e) => {
   return (
     <div className="grid grid-cols-1 gap-4 w-full md:w-1/2 p-4">
       <form
-        className="bg-cyan-400 flex flex-col gap-4 items-center p-4"
+        className="bg-cyan-400 flex rounded-xl shadow-md shadow-gray-500 flex-col gap-4 items-center p-4"
         htmlFor="api-call"
         onSubmit={handleSubmit}
       >
@@ -60,7 +60,7 @@ const handleChange = (e) => {
         </button>
       </form>
 
-<Card name={pokeInfo.name} img={sprite ? sprite.front_default : ''} />
+ {pokeInfo.name ? <Card name={pokeInfo.name} img={sprite ? sprite.front_default : ''} /> : ''}
     </div>
   );
 }
