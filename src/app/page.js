@@ -1,10 +1,12 @@
 
-import Searchform from "@/components/Searchform";
+import Pokemon from "@/components/Pokemon";
+import Nav from "../components/Nav";
 
 export default function Home() {
   return (
     <div>
-      <Searchform />
+      <Nav />
+      <Pokemon />
     </div>
   );
 }
