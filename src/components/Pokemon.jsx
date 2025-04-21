@@ -30,22 +30,11 @@ const Pokemon = () => {
     fetchPokemon();
   };
 
-  // useEffect(() => {
-  //   const fetchAbility = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         //TODO: figure out how to cycle through abilities ???
-  //         `https://pokeapi.co/api/v2/ability/${abilities.ability.name}/`
-  //       );
-  //       const description = await response.json();
-  //       console.log(description);
-  //     } catch (error) {
-  //       console.error(error, "Could not fetch");
-  //     }
-  //   };
-
-  //   fetchAbility();
-  // }, [handleSubmit]);
+// useEffect(() => {
+//   if (pokeInfo.moves) {
+//   props.moves.moves.map((move) => console.log(move.move.name));
+//   }
+// }, [pokeInfo]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,23 +44,31 @@ const Pokemon = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-4 w-full md:w-1/2 p-4">
+    <div className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-2 md:w-full">
       <form
-        className="bg-cyan-600 flex rounded-xl shadow-md shadow-gray-500 flex-col gap-4 items-center p-4"
+        className="bg-cyan-600 flex rounded-xl md:w-md shadow-md shadow-gray-500 flex-col gap-8 items-center p-4"
         htmlFor="api-call"
         onSubmit={handleSubmit}
       >
-        <label htmlFor="name">Pokemon Search:</label>
+        <label
+          htmlFor="name"
+          className="text-2xl subpixel-antialiased font-stretch-expanded text-white"
+        >
+          Enter Pokemon name or id:
+        </label>
         <input
-          className="bg-white p-4 w-3/4 md:w-1/2 border-indigo-500"
+          className="bg-white p-4 w-3/4 md:w-full rounded-2xl border-indigo-500"
           type="text"
           name="poke_name"
           value={pokeName}
           onChange={handleChange}
-          placeholder="enter pokemon name or id"
+          placeholder="name or id..."
           required
         />
-        <button className="btn btn-secondary" type="submit">
+        <button
+          className="btn btn-secondary md:w-full rounded-2xl"
+          type="submit"
+        >
           Search
         </button>
       </form>
@@ -83,12 +80,11 @@ const Pokemon = () => {
           img={sprite ? sprite.front_default : ""}
           abilities={abilities === null ? "" : abilities}
         />
-       
       ) : (
         ""
       )}
 
-  
+      {pokeInfo.moves ? <Card moves={pokeInfo.moves} /> : ""}
     </div>
   );
 };
