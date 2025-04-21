@@ -57,7 +57,7 @@ const Pokemon = () => {
           Enter Pokemon name or id:
         </label>
         <input
-          className="bg-white p-4 w-3/4 md:w-full rounded-2xl border-indigo-500"
+          className="bg-white p-4 w-sm md:w-full rounded-2xl border-indigo-500"
           type="text"
           name="poke_name"
           value={pokeName}
@@ -66,7 +66,7 @@ const Pokemon = () => {
           required
         />
         <button
-          className="btn btn-secondary md:w-full rounded-2xl"
+          className="btn btn-secondary w-1/2 rounded-2xl text-white"
           type="submit"
         >
           Search
