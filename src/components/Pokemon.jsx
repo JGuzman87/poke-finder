@@ -1,6 +1,6 @@
 "use client";
 import Card from "./Card";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 const Pokemon = () => {
   const [pokeInfo, setPokeInfo] = useState({});
