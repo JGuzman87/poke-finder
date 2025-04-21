@@ -44,9 +44,9 @@ const Pokemon = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-2 md:w-full">
+    <div className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-3 md:w-full">
       <form
-        className="bg-cyan-600 flex rounded-xl md:w-md shadow-md shadow-gray-500 flex-col gap-8 items-center p-4"
+        className="bg-cyan-600 flex rounded-xl md:max-w-md shadow-md shadow-gray-500 flex-col gap-8 items-center p-4"
         htmlFor="api-call"
         onSubmit={handleSubmit}
       >

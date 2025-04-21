@@ -26,7 +26,7 @@ const Card = (props) => {
     );
   }
     return (
-      <div className="card bg-primary md:max-w-3/4 col-span-1 shadow-md shadow-gray-500 rounded-xl text-primary-content ">
+      <div className="card bg-primary md:max-w-1/2 col-span-2 shadow-md shadow-gray-500 rounded-xl text-primary-content ">
         <div className="card-body">
           <div className="flex justify-around">
             <h2 className="card-title capitalize text-white font-bold font-stretch-expanded text-3xl">
