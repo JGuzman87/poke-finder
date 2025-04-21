@@ -4,7 +4,7 @@ import React from 'react';
 const Card = (props) => {
   if (props.moves) {
     return (
-      <div className="card bg-rose-400 md:max-w-full shadow-md shadow-gray-500 rounded-xl text-primary-content ">
+      <div className="card skeleton  bg-rose-400 md:max-w-full shadow-md shadow-gray-500 rounded-xl text-primary-content ">
         <div className="card-body">
           <div
             tabIndex={0}
