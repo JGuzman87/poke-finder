@@ -57,7 +57,7 @@ const Pokemon = () => {
           Enter Pokemon name or id:
         </label>
         <input
-          className="bg-white p-4 w-1/2 md:w-full rounded-2xl border-indigo-500"
+          className="bg-white p-4 w-full md:w-full rounded-2xl border-indigo-500"
           type="text"
           name="poke_name"
           value={pokeName}
