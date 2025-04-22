@@ -4,17 +4,19 @@ import React from 'react';
 const Card = (props) => {
   if (props.moves) {
     return (
-      <div className="card skeleton  bg-rose-400 md:max-w-full shadow-md shadow-gray-500 rounded-xl text-primary-content ">
+      <div className="card skeleton col-span-3 md:col-span-2 bg-rose-400 md:max-w-full  shadow-md shadow-gray-500 rounded-xl text-primary-content ">
         <div className="card-body">
           <div
             tabIndex={0}
             className="collapse collapse-arrow bg-base-100 border-base-300 border"
           >
             <div className="collapse-title font-semibold bg-rose-400">
-              <h1 className="font-stretch-expanded text-xl text-white">Moves</h1>
+              <h1 className="font-stretch-expanded text-xl text-white">
+                Moves
+              </h1>
             </div>
             <div className="collapse-content text-sm bg-rose-400">
-              <ul className="capitalize text-amber-50 font-bold">
+              <ul className="underline capitalize text-amber-50 font-bold">
                 {props.moves.map((move) => (
                   <li key={move.move.name}>{move.move.name}</li>
                 ))}
@@ -26,7 +28,7 @@ const Card = (props) => {
     );
   }
     return (
-      <div className="card bg-primary md:max-w-1/2 col-span-2 shadow-md shadow-gray-500 rounded-xl text-primary-content ">
+      <div className="card bg-primary col-span-3 md:col-span-1 md:max-w-full shadow-md shadow-gray-500 rounded-xl text-primary-content ">
         <div className="card-body">
           <div className="flex justify-around">
             <h2 className="card-title capitalize text-white font-bold font-stretch-expanded text-3xl">

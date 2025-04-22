@@ -2,8 +2,14 @@
 import React from 'react'
 
 const Nav = () => {
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      fetchPokemon();
+    };
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm col-span-3">
       <div className="navbar-start">
         <a className="btn btn-ghost text-xl">Poke-Search</a>
       </div>
@@ -30,7 +36,7 @@ const Nav = () => {
         </button>
         <dialog id="my_modal_3" className="modal">
           <div className="modal-box flex flex-col gap-2 items-center">
-            <form method="dialog">
+            <form method="dialog" onsSubmit={handleSubmit} >
               {/* if there is a button in form, it will close the modal */}
               <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
