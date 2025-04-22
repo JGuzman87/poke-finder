@@ -31,7 +31,12 @@ const Nav = (props) => {
         </button>
         <dialog id="my_modal_3" className="modal">
           <div className="modal-box flex flex-col gap-2 items-center">
-            <form method="dialog">
+            <form
+              onSubmit={(e) => {
+                props.onSubmit(e);
+                document.getElementById("my_modal_3").close();
+              }}
+            >
               {/* if there is a button in form, it will close the modal */}
               <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
@@ -45,7 +50,7 @@ const Nav = (props) => {
                 value={props.value}
                 onChange={props.onChange}
               />
-              <button onClick={props.onSubmit}>Submit</button>
+              <button>Submit</button>
             </form>
           </div>
         </dialog>

@@ -32,13 +32,6 @@ export default function Home() {
 
     fetchPokemon();
   };
-
-// useEffect(() => {
-//   if (pokeInfo.moves) {
-//   props.moves.moves.map((move) => console.log(move.move.name));
-//   }
-// }, [pokeInfo]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "poke_name") {
@@ -51,33 +44,6 @@ export default function Home() {
 
       <Nav onSubmit={handleSubmit} value={pokeName} onChange={handleChange} />
    
-      <form
-        className="col-span-3 md:col-span-1 bg-cyan-600 flex rounded-xl shadow-md md:max-w-full shadow-gray-500 flex-col gap-8 items-center p-4"
-        htmlFor="api-call"
-        onSubmit={handleSubmit}
-      >
-        <label
-          htmlFor="name"
-          className="text-2xl subpixel-antialiased font-stretch-expanded text-white"
-        >
-          Enter Pokemon name or id:
-        </label>
-        <input
-          className="bg-white p-4 w-full md:w-full rounded-2xl border-indigo-500"
-          type="text"
-          name="poke_name"
-          value={pokeName}
-          onChange={handleChange}
-          placeholder="name or id..."
-          required
-        />
-        <button
-          className="btn btn-secondary w-1/2 rounded-2xl text-white"
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
 
       {pokeInfo.name ? (
         <Card
