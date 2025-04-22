@@ -1,13 +1,8 @@
 'use client'
 import React from 'react'
 
-const Nav = () => {
+const Nav = (props) => {
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-
-      fetchPokemon();
-    };
   return (
     <div className="navbar bg-base-100 shadow-sm col-span-3">
       <div className="navbar-start">
@@ -36,14 +31,22 @@ const Nav = () => {
         </button>
         <dialog id="my_modal_3" className="modal">
           <div className="modal-box flex flex-col gap-2 items-center">
-            <form method="dialog" onsSubmit={handleSubmit} >
+            <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                 ✕
               </button>
+              <h3 className="font-bold text-lg">Enter Pokemon name or id</h3>
+              <input
+                type="text"
+                name="poke_name"
+                placeholder="pikachu or 25"
+                className="input "
+                value={props.value}
+                onChange={props.onChange}
+              />
+              <button onClick={props.onSubmit}>Submit</button>
             </form>
-            <h3 className="font-bold text-lg">Enter Pokemon name or id</h3>
-            <input type="text" placeholder="pikachu or 25" className="input " />
           </div>
         </dialog>
 

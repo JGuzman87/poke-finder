@@ -6,7 +6,7 @@ import Nav from "../components/Nav";
 
 export default function Home() {
 
-    const [pokeInfo, setPokeInfo] = useState({});
+  const [pokeInfo, setPokeInfo] = useState({});
   const [pokeName, setPokeName] = useState("");
   const [sprite, setSprite] = useState({});
   const [abilities, setAbilities] = useState(null);
@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-3  md:max-w-full">
 
-      <Nav />
+      <Nav onSubmit={handleSubmit} value={pokeName} onChange={handleChange} />
    
       <form
         className="col-span-3 md:col-span-1 bg-cyan-600 flex rounded-xl shadow-md md:max-w-full shadow-gray-500 flex-col gap-8 items-center p-4"
