@@ -4,46 +4,46 @@ import React from 'react';
 const Card = (props) => {
   if (props.moves) {
     return (
-      <div className="card skeleton col-span-3 md:col-span-2 bg-rose-400 md:max-w-full  shadow-md shadow-gray-500 rounded-xl text-primary-content ">
-        <div className="card-body">
+      <div className="card  col-span-3 md:col-span-2  md:max-w-full  rounded-xl text-primary-content ">
+       
           <div
             tabIndex={0}
-            className="collapse collapse-arrow bg-base-100 border-base-300 border"
+            className="collapse collapse-arrow bg-base-100 border-base-200 border shadow-2xl"
           >
-            <div className="collapse-title font-semibold bg-rose-400">
-              <h1 className="font-stretch-expanded text-xl text-white">
+            <div className="collapse-title font-semibold bg-base-100">
+              <h1 className="font-stretch-expanded text-xl text-black">
                 Moves
               </h1>
             </div>
-            <div className="collapse-content text-sm bg-rose-400">
-              <ul className="underline capitalize text-amber-50 font-bold">
+            <div className="collapse-content text-sm bg-base-100">
+              <ul className="underline capitalize text-black font-bold">
                 {props.moves.map((move) => (
                   <li key={move.move.name}>{move.move.name}</li>
                 ))}
               </ul>
             </div>
           </div>
-        </div>
+      
       </div>
     );
   }
     return (
-      <div className="card bg-primary col-span-3 md:col-span-1 md:max-w-full shadow-md shadow-gray-500 rounded-xl text-primary-content ">
+      <div className="card col-span-3 md:col-span-2 bg-base-100 borber-base-100  md:max-w-full shadow-xl rounded-xl text-primary-content ">
         <div className="card-body">
           <div className="flex justify-around">
-            <h2 className="card-title capitalize text-white font-bold font-stretch-expanded text-3xl">
+            <h2 className="card-title capitalize text-black font-bold font-stretch-expanded text-3xl">
               {props.name} ({props.id})
             </h2>
-            <img width="200px" src={props.img} />
+            <img className='min-w-50' src={props.img} />
           </div>
           {props.abilities ? (
-            <h1 className="text-white text-xl font-bold font-stretch-expanded">
+            <h1 className="text-black text-xl font-bold font-stretch-expanded">
               Abilities
             </h1>
           ) : (
             ""
           )}
-          <ul className="capitalize text-amber-50 font-bold font-stretch-expanded">
+          <ul className="capitalize text-black font-bold font-stretch-expanded">
             {props.abilities.map((ability) => (
               <li key={ability.ability.name}>{ability.ability.name}</li>
             ))}
