@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-3 md:max-w-full">
+    <main className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-3 md:max-w-full">
 
       <Nav onSubmit={handleSubmit} value={pokeName} onChange={handleChange} />
    
@@ -57,5 +57,5 @@ export default function Home() {
       )}
 
       {pokeInfo.moves ? <Card moves={pokeInfo.moves} /> : ""}
-    </div>
+    </main>
   )};
