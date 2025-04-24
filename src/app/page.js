@@ -1,6 +1,6 @@
 "use client"
 import Card from "@/components/Card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Nav from "../components/Nav";
 
@@ -10,6 +10,21 @@ export default function Home() {
   const [pokeName, setPokeName] = useState("");
   const [sprite, setSprite] = useState({});
   const [abilities, setAbilities] = useState(null);
+
+  useEffect(() => {
+
+    const pokemonid = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    const randomid = pokemonid[Math.floor(Math.random() * pokemonid.length )];
+    const fetchRandom = async () => {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomid}`);
+      const randomData = await response.json();
+      setPokeInfo(randomData);
+      setSprite(randomData.sprites);
+      setAbilities(randomData.abilities)
+
+    }
+    fetchRandom()
+  }, []);
 
   const fetchPokemon = async () => {
     try {
@@ -38,6 +53,8 @@ export default function Home() {
       setPokeName(value);
     }
   };
+
+
 
   return (
     <main className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-3 md:max-w-full">
