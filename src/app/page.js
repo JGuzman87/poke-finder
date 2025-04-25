@@ -62,13 +62,9 @@ export default function Home() {
   return (
     <main className="grid grid-cols-1 gap-4 w-full p-4 md:grid-cols-3 md:max-w-full">
       <Nav onSubmit={handleSubmit} value={pokeName} onChange={handleChange} />
-      <div
-        className={`transition-all duration-500 ease-in-out ${
-          error ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}
-      >
+  
         {error && <Alert error={error} />}
-      </div>
+  
       {pokeInfo.name ? (
         <Card
           name={pokeInfo.name}
