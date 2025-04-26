@@ -60,24 +60,23 @@ export default function Home() {
   };
 
   return (
-    <main className="grid grid-cols-1 gap-4 w-full  md:grid-cols-3 md:max-w-full">
+    <main className="grid grid-cols-1 gap-4 w-full p-2 md:grid-cols-3 md:max-w-full">
       <Nav onSubmit={handleSubmit} value={pokeName} onChange={handleChange} />
+  
+        {error && <Alert error={error} />}
+  
+      {pokeInfo.name ? (
+        <Card
+          name={pokeInfo.name}
+          id={pokeInfo.id}
+          img={sprite ? sprite.front_default : ""}
+          abilities={abilities === null ? "" : abilities}
+        />
+      ) : (
+        ""
+      )}
 
-      {error && <Alert error={error} />}
-      <div className="flex flex-col gap-4 p-4">
-        {pokeInfo.name ? (
-          <Card
-            name={pokeInfo.name}
-            id={pokeInfo.id}
-            img={sprite ? sprite.front_default : ""}
-            abilities={abilities === null ? "" : abilities}
-          />
-        ) : (
-          ""
-        )}
-
-        {pokeInfo.moves ? <Card moves={pokeInfo.moves} /> : ""}
-      </div>
+      {pokeInfo.moves ? <Card moves={pokeInfo.moves} /> : ""}
     </main>
   );
 }
