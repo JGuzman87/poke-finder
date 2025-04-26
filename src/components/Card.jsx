@@ -11,7 +11,7 @@ const Card = (props) => {
              <h2 className="card-title capitalize font-bold font-stretch-expanded text-3xl">
                {props.name} ({props.id})
              </h2>
-             <img className="min-w-50" src={props.img} />
+             <img className="min-w-50 md:min-width-full" src={props.img} />
            </div>
            {props.abilities ? (
              <h1 className="text-xl font-bold font-stretch-expanded">
