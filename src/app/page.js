@@ -27,7 +27,7 @@ export default function Home() {
       setPokeInfo(randomData);
       setSprite(randomData.sprites);
       setAbilities(randomData.abilities);
-       await new Promise((r) => setTimeout(r, 1000));
+       await new Promise((r) => setTimeout(r, 1500));
     } catch(error) {
       console.log(error)
     } finally {
@@ -49,7 +49,7 @@ export default function Home() {
       console.log(pokeData);
       // console.log(pokeData.abilities[0].ability.name);
       setAbilities(pokeData.abilities);
-      await new Promise((r) => setTimeout(r, 1000));
+      await new Promise((r) => setTimeout(r, 1500));
     } catch (error) {
       setError("Not a valid pokemon name or id.");
       console.error(error)
