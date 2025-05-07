@@ -6,11 +6,12 @@ import { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 
 export default function Home() {
-  const [pokeInfo, setPokeInfo] = useState({});
+  const [pokeInfo, setPokeInfo] = useState([]);
   const [pokeName, setPokeName] = useState("");
   const [sprite, setSprite] = useState({});
   const [abilities, setAbilities] = useState(null);
   const [error, setError] = useState();
+  const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const pokemonid = [
@@ -18,6 +19,7 @@ export default function Home() {
     ];
     const randomid = pokemonid[Math.floor(Math.random() * pokemonid.length)];
     const fetchRandom = async () => {
+      try {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${randomid}`
       );
@@ -25,7 +27,13 @@ export default function Home() {
       setPokeInfo(randomData);
       setSprite(randomData.sprites);
       setAbilities(randomData.abilities);
+       await new Promise((r) => setTimeout(r, 1000));
+    } catch(error) {
+      console.log(error)
+    } finally {
+      setIsLoading(false)
     };
+  }
     fetchRandom();
   }, []);
 
@@ -41,9 +49,12 @@ export default function Home() {
       console.log(pokeData);
       // console.log(pokeData.abilities[0].ability.name);
       setAbilities(pokeData.abilities);
+      await new Promise((r) => setTimeout(r, 1000));
     } catch (error) {
       setError("Not a valid pokemon name or id.");
       console.error(error)
+    }finally {
+      setIsLoading(false)
     }
   };
 
@@ -62,15 +73,14 @@ export default function Home() {
   return (
     <main className="grid grid-cols-1 gap-4 w-full p-2 md:grid-cols-3 md:max-w-full">
       <Nav onSubmit={handleSubmit} value={pokeName} onChange={handleChange} />
-  
-        {error && <Alert error={error} />}
-  
+      {error && <Alert error={error} />}
       {pokeInfo.name ? (
         <Card
           name={pokeInfo.name}
           id={pokeInfo.id}
           img={sprite ? sprite.front_default : ""}
           abilities={abilities === null ? "" : abilities}
+          loading={loading}
         />
       ) : (
         ""
