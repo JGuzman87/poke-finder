@@ -45,13 +45,11 @@ const Card = (props) => {
 
      return (
        <div className="card-body   col-span-3 md:col-span-2  md:max-w-full  rounded-xl text-base-content ">
-
-        
          <div
            tabIndex={0}
            className=" collapse collapse-arrow  border-base-200 border shadow-2xl"
          >
-           <div className="collapse-title  bg-base-100">
+           <div className="collapse-title  bg-base-100 h-14 bg-linear-to-t from-sky-500 to-indigo-500">
              <h1 className="font-stretch-expanded text-xl">Moves</h1>
            </div>
            <div className="collapse-content  text-sm bg-base-100">

@@ -4,7 +4,7 @@ import React from 'react'
 const Nav = (props) => {
 
   return (
-    <div className="navbar bg-base-100 shadow-sm col-span-3">
+    <div className="navbar bg-base-100 shadow-sm col-span-3 h-14 bg-linear-to-t from-sky-500 to-indigo-500">
       <div className="navbar-start">
         <a className="btn btn-ghost text-xl">Poke-Search</a>
       </div>
